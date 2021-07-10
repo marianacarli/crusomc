@@ -2,10 +2,20 @@ package com.marianacarli.cursomc.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 //serializable - objts podem ser convertidos para uma sequencia de bytes - objs podem ser gravados em arquivos
 public class Categoria implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
+	
+	@Id
+	//definindo a geracao automatica dos ids das categorias
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
 	
